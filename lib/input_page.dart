@@ -14,29 +14,48 @@ class _InputPageState extends State<InputPage> {
           title: Text("BMI CALCULATOR"),
           leading: Icon(Icons.menu),
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(
-            top: 14,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
+        body: Column(
+          children: [
+            Expanded(
+                child: Row(
+              children: [
+                Expanded(
+                    child: Container(
+                  margin: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                      color: Color(0xFF1D1E33),
+                      borderRadius: BorderRadius.circular(10)),
+                )),
+                Expanded(child: Container(
+                  margin: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                      color: Color(0xFF1D1E33),
+                      borderRadius: BorderRadius.circular(10)),
+                )),
+              ],
+            )),
+            Expanded(child: Container(
+              margin: EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                  color: Color(0xFF1D1E33),
+                  borderRadius: BorderRadius.circular(10)),
+            )),
+            Expanded(
+                child: Row(children: [
+              Expanded(child: Container(
+                margin: EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color(0xFF1D1E33)),
-                width: 150,
-                height: 200,
-              ),
-              Container(
+                    color: Color(0xFF1D1E33),
+                    borderRadius: BorderRadius.circular(10)),
+              )),
+              Expanded(child: Container(
+                margin: EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color(0xFF1D1E33)),
-                width: 140,
-                height: 200,
-              ),
-            ],
-          ),
+                    color: Color(0xFF1D1E33),
+                    borderRadius: BorderRadius.circular(10)),
+              )),
+            ])),
+          ],
         ));
   }
 }
