@@ -19,8 +19,8 @@ class _ResultPageState extends State<ResultPage> {
         appBar: AppBar(
           elevation: 0,
           title: Text(
-            "YOUR RESULT",
-            style: TextStyle(fontSize: 30,fontWeight: FontWeight.w800),
+            "Your Result",
+            style: TextStyle(fontSize: 32,fontWeight: FontWeight.w600),
           ),
         ),
         body: Column(
@@ -28,12 +28,9 @@ class _ResultPageState extends State<ResultPage> {
             Expanded(
               flex: 6,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(28, 60, 28, 16),
+                padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      20,
-                    ),
                     color: Color(0xFF111328),
                   ),
                   child: Column(

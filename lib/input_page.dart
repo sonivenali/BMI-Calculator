@@ -51,7 +51,7 @@ class _InputPageState extends State<InputPage> {
                     color: Color(0xFF111328),
                     borderRadius: BorderRadius.circular(10)),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(16),
                   child: Column(
                     children: [
                       Text(
@@ -63,7 +63,7 @@ class _InputPageState extends State<InputPage> {
                             fontSize: 18),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.baseline,
