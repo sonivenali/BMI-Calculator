@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 class ResultPage extends StatefulWidget {
+
   final String bmiResult;
   final String resultText;
   final String interpretation;
+
+  ResultPage({this.bmiResult,this.interpretation,this.resultText});
 
   @override
   _ResultPageState createState() => _ResultPageState();
