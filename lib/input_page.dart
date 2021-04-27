@@ -108,16 +108,20 @@ class _InputPageState extends State<InputPage> {
               Expanded(child: buildWeight()),
               Expanded(child: buildAge())
             ])),
-            Container(
-              child: Center(
-                  child: Text(
-                "CALCULATE",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-              )),
-              color: Color(0xFFEB1555),
-              margin: EdgeInsets.only(top: 10),
-              width: double.infinity,
-              height: 80,
+            GestureDetector(onTap: (){
+
+            },
+              child: Container(
+                child: Center(
+                    child: Text(
+                  "CALCULATE",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                )),
+                color: Color(0xFFEB1555),
+                margin: EdgeInsets.only(top: 10),
+                width: double.infinity,
+                height: 80,
+              ),
             )
           ],
         ));
