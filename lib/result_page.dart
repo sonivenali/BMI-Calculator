@@ -17,32 +17,54 @@ class _ResultPageState extends State<ResultPage> {
     return Scaffold(
         backgroundColor: Color(0xFF0A0E21),
         appBar: AppBar(
-          title: Text("YOUR RESULT"),
+          elevation: 0,
+          title: Text(
+            "YOUR RESULT",
+            style: TextStyle(fontSize: 30,fontWeight: FontWeight.w800),
+          ),
         ),
         body: Column(
           children: [
             Expanded(
               flex: 6,
               child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Container(color: Color(0xFF111328),
+                padding: const EdgeInsets.fromLTRB(28, 60, 28, 16),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      20,
+                    ),
+                    color: Color(0xFF111328),
+                  ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(widget.resultText,style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 24,fontWeight: FontWeight.w600),),
-                      Text(widget.bmiResult,style: TextStyle(fontSize: 40),),
-                      Text(widget.interpretation,style: TextStyle(fontSize: 20),),
+                      Text(
+                        widget.resultText,
+                        style: TextStyle(
+                            color: Colors.green,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Text(
+                        widget.bmiResult,
+                        style: TextStyle(fontSize: 40),
+                      ),
+                      Text(
+                        widget.interpretation,
+                        style: TextStyle(fontSize: 20),
+                        textAlign: TextAlign.center,
+                      ),
                     ],
                   ),
                 ),
               ),
             ),
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(bottom:8.0),
+              child: GestureDetector(onTap: () {
+                Navigator.pop(context);
+              },
                 child: Container(
                   child: Center(
                     child: Text(
