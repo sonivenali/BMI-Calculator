@@ -8,8 +8,9 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   String selected = "";
-  int weight = 30;
-  int age = 30;
+  int height = 180;
+  int weight = 15;
+  int age = 15;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +48,59 @@ class _InputPageState extends State<InputPage> {
                 decoration: BoxDecoration(
                     color: Color(0xFF111328),
                     borderRadius: BorderRadius.circular(10)),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        "HEIGHT",
+                        style: TextStyle(
+                            color: Color(
+                              0xFF8D8E98,
+                            ),
+                            fontSize: 18),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: [
+                            Text(
+                              height.toString(),
+                              style: TextStyle(
+                                  fontSize: 40, fontWeight: FontWeight.w700),
+                            ),
+                            Text("cm"),
+                          ],
+                        ),
+                      ),
+                      SliderTheme(
+                        data: SliderTheme.of(context).copyWith(
+                          inactiveTrackColor: Color(0xFF8D8E98),
+                          activeTrackColor: Colors.white,
+                          thumbColor: Color(0xFFEB1555),
+                          overlayColor: Color(0x29EB1555),
+                          thumbShape:
+                              RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                          overlayShape:
+                              RoundSliderOverlayShape(overlayRadius: 30.0),
+                        ),
+                        child: Slider(
+                          value: height.toDouble(),
+                          min: 120.0,
+                          max: 220.0,
+                          onChanged: (double newValue) {
+                            setState(() {
+                              height = newValue.round();
+                            });
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
             Expanded(
@@ -85,28 +139,45 @@ class _InputPageState extends State<InputPage> {
                 ),
                 fontSize: 18),
           ),
-          Text(weight.toString()),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              weight.toString(),
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.only(top: 8),
             child: Row(
               children: [
                 Expanded(
                   child: RawMaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        weight = weight - 1;
+                      });
+                    },
                     elevation: 2.0,
                     fillColor: Color(0xFF8D8E98),
-                    child: Icon(Icons.remove, size: 15),
-                    padding: EdgeInsets.all(15.0),
+                    child: Icon(
+                      Icons.remove,
+                      size: 24,
+                    ),
+                    padding: EdgeInsets.all(10),
                     shape: CircleBorder(),
                   ),
                 ),
                 Expanded(
                   child: RawMaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        weight = weight + 1;
+                      });
+                    },
                     elevation: 2.0,
                     fillColor: Color(0xFF8D8E98),
-                    child: Icon(Icons.add, size: 15),
-                    padding: EdgeInsets.all(15.0),
+                    child: Icon(Icons.add, size: 24),
+                    padding: EdgeInsets.all(10),
                     shape: CircleBorder(),
                   ),
                 ),
@@ -134,28 +205,42 @@ class _InputPageState extends State<InputPage> {
                 ),
                 fontSize: 18),
           ),
-          Text(age.toString()),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              age.toString(),
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.only(top: 8),
             child: Row(
               children: [
                 Expanded(
                   child: RawMaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        age = age - 1;
+                      });
+                    },
                     elevation: 2.0,
                     fillColor: Color(0xFF8D8E98),
-                    child: Icon(Icons.remove, size: 15),
-                    padding: EdgeInsets.all(15.0),
+                    child: Icon(Icons.remove, size: 24),
+                    padding: EdgeInsets.all(10.0),
                     shape: CircleBorder(),
                   ),
                 ),
                 Expanded(
                   child: RawMaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        age = age + 1;
+                      });
+                    },
                     elevation: 2.0,
                     fillColor: Color(0xFF8D8E98),
-                    child: Icon(Icons.add, size: 15),
-                    padding: EdgeInsets.all(15.0),
+                    child: Icon(Icons.add, size: 24),
+                    padding: EdgeInsets.all(10.0),
                     shape: CircleBorder(),
                   ),
                 ),
